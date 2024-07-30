@@ -10,13 +10,6 @@ public class ApplicationDbContext : DbContext
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {
     }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        base.OnConfiguring(optionsBuilder);
-        
-        optionsBuilder.UseInMemoryDatabase("Todo");
-    }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

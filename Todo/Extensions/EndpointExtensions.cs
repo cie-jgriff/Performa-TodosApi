@@ -5,6 +5,10 @@ namespace Todo.Extensions;
 
 public static class EndpointExtensions
 {
+    /// <summary>
+    /// Registers all implementations of <see cref="IModule"/> in the current assembly to the service collection
+    /// </summary>
+    /// <param name="services"></param>
     public static IServiceCollection AddEndpoints(this IServiceCollection services)
     {
         var assembly = typeof(Program).Assembly;
@@ -17,6 +21,11 @@ public static class EndpointExtensions
         return services;
     }
 
+    /// <summary>
+    /// Loops through all registered <see cref="IModule"/> instances and maps their endpoints
+    /// </summary>
+    /// <param name="app"></param>
+    /// <returns></returns>
     public static WebApplication MapEndpoints(this WebApplication app)
     {
         var modules = app.Services.GetRequiredService<IEnumerable<IModule>>();
