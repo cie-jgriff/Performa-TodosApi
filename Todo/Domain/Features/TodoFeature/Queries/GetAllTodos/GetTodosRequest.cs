@@ -3,7 +3,7 @@ using MediatR;
 using Todo.Domain.Features.TodoFeature.Dtos;
 using Todo.Domain.Stores;
 
-namespace Todo.Domain.Features.TodoFeature.Queries;
+namespace Todo.Domain.Features.TodoFeature.Queries.GetAllTodos;
 
 public class GetTodosRequest : IRequest<List<TodoItemDto>>
 {
