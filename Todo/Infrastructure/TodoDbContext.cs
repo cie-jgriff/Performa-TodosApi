@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
-using Todo.Domain;
+using Todo.Domain.DataModels;
 
 namespace Todo;
 
-public class ApplicationDbContext : DbContext
+public class TodoDbContext : DbContext
 {
     public DbSet<TodoItem> Todos { get; set; }
 
-    public ApplicationDbContext(DbContextOptions options) : base(options)
+    public TodoDbContext(DbContextOptions options) : base(options)
     {
     }
     
@@ -15,6 +15,6 @@ public class ApplicationDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(TodoDbContext).Assembly);
     }
 }
