@@ -5,6 +5,7 @@ using Todo.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 builder.Services.AddCore(new HttpClient());
 builder.Services.AddDbContext<TodoDbContext>(opt => opt.UseInMemoryDatabase("TodosDb"));
 builder.Services.AddControllers();
