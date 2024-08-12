@@ -1,8 +1,6 @@
-using System.Runtime.CompilerServices;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
-using Todo;
 using Todo.Extensions;
+using Todo.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
